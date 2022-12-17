@@ -14,9 +14,11 @@ export default function Home() {
       didnw: 3,
     },
   ];
+
+  const categories = ["rock", "terrain"];
   return (
     <>
-      <Search products={products} />
+      <Search products={products} categories={categories} />
     </>
   );
 }

@@ -1,20 +1,6 @@
 import { useRouter } from "next/router";
-const PAGE_SIZE = 2;
 
-const products = [
-  {
-    name: "test",
-    nn: 2,
-  },
-  {
-    name: "test",
-    nn: 2,
-  },
-  {
-    name: "test",
-    nn: 2,
-  },
-];
+const PAGE_SIZE = 2;
 
 export default function Search(props) {
   const router = useRouter();
