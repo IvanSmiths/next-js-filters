@@ -1,9 +1,31 @@
 import { useRouter } from "next/router";
-
-const PAGE_SIZE = 2;
+import { useEffect } from "react";
 
 export default function Search(props) {
+  const PAGE_SIZE = 2;
   const router = useRouter();
+
+  useEffect(() => {
+    const pageSize = query.pageSize || PAGE_SIZE;
+    const page = query.page || 1;
+    const category = query.category || "";
+    const brand = query.brand || "";
+    const searchQuery = query.query || "";
+
+    const queryFilter =
+      searchQuery && searchQuery !== "all"
+        ? {
+            name: {
+              $regex: searchQuery,
+              $options: "i",
+            },
+          }
+        : {};
+    const categoryFilter = category && category !== "all" ? { category } : {};
+    const brandFilter = brand && brand !== "all" ? { brand } : {};
+
+    return () => {};
+  }, []);
 
   const {
     query = "all",
