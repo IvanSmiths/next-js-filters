@@ -66,9 +66,33 @@ export default function Search(props) {
         {brand !== "all" && " : " + brand}
         &nbsp;
         {(query !== "all" && query !== "") ||
-          category !== "all" ||
-          brand !== "all"}
+        category !== "all" ||
+        brand !== "all" ? (
+          <button onClick={() => router.push("/search")}>test</button>
+        ) : null}
       </div>
+      <div>
+        {products.map((product) => (
+          <div key={product.name} product={product}>
+            <h1>{product.name}</h1>
+          </div>
+        ))}
+      </div>
+      <ul>
+        {products.length > 0 &&
+          [...Array(pages).keys()].map((pageNumber) => (
+            <li key={pageNumber}>
+              <button
+                className={`default-button m-2 ${
+                  page == pageNumber + 1 ? "font-bold" : ""
+                } `}
+                onClick={() => pageHandler(pageNumber + 1)}
+              >
+                {pageNumber + 1}
+              </button>
+            </li>
+          ))}
+      </ul>
     </div>
   );
 }

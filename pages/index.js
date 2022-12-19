@@ -7,10 +7,10 @@ export default function Home() {
   const products = [
     {
       name: "tesg",
-      didnw: 3,
+      didnw: 2,
     },
     {
-      name: "tesg",
+      name: "test",
       didnw: 3,
     },
   ];
